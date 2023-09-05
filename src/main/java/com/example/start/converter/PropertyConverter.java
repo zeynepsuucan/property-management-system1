@@ -20,16 +20,14 @@ public class PropertyConverter {
 
     }
 
-    public PropertyDTO convertEntitytoDTO(PropertyEntity propertyEntity){
-
+    public PropertyDTO convertEntityToDTO(PropertyEntity pe) {
         PropertyDTO pd = new PropertyDTO();
-        pd.setTitle(propertyEntity.getTitle());
-        pd.setAddress(propertyEntity.getAddress());
-        pd.setDescription(propertyEntity.getDescription());
-        pd.setOwnerEmail(propertyEntity.getOwnerEmail());
-        pd.setPrice(propertyEntity.getPrice());
-        pd.setOwnerName(propertyEntity.getOwnerName());
+        pd.setTitle(pe.getTitle());
+        pd.setAddress(pe.getAddress());
+        pd.setDescription(pe.getDescription());
+        pd.setOwnerEmail(pe.getOwnerEmail());
+        pd.setPrice(pe.getPrice());
+        pd.setOwnerName(pe.getOwnerName());
         return pd;
-
     }
 }

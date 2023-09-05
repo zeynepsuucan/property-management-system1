@@ -39,7 +39,6 @@ public class PropertyServiceImpl implements PropertyService {
         Optional<UserEntity> optUe = userRepository.findById(propertyDTO.getUserId());
         if(optUe.isPresent()) {
             PropertyEntity pe = propertyConverter.convertDTOtoEntity(propertyDTO);
-            pe.setUserEntity(optUe.get());
             pe = propertyRepository.save(pe);
 
             propertyDTO = propertyConverter.convertEntityToDTO(pe);
@@ -70,7 +69,7 @@ public class PropertyServiceImpl implements PropertyService {
         return propList;
     }
 
-    @Override
+    /*@Override
     public List<PropertyDTO> getAllPropertiesForUser(Long userId) {
         List<PropertyEntity> listOfProps = (List<PropertyEntity>)propertyRepository.findAllByUserEntityId(userId);
         List<PropertyDTO> propList = new ArrayList<>();
@@ -80,7 +79,7 @@ public class PropertyServiceImpl implements PropertyService {
             propList.add(dto);
         }
         return propList;
-    }
+    }*/
 
     @Override
     public PropertyDTO updateProperty(PropertyDTO propertyDTO, Long propertyId) {

@@ -2,7 +2,6 @@ package com.example.start.controller;
 
 import com.example.start.model.PropertyDTO;
 import com.example.start.service.PropertyService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,12 +34,12 @@ public class PropertyController {
         ResponseEntity<List<PropertyDTO>> responseEntity = new ResponseEntity<>(propertyList,HttpStatus.OK);
         return responseEntity;
     }
-    @GetMapping("/properties/users/{userId}")
+    /*@GetMapping("/properties/users/{userId}")
     public ResponseEntity<List<PropertyDTO>> getAllPropertiesForUser(@PathVariable("userId") Long userId){
         List<PropertyDTO> propertyList = propertyService.getAllPropertiesForUser(userId);
         ResponseEntity<List<PropertyDTO>> responseEntity = new ResponseEntity<>(propertyList, HttpStatus.OK);
         return responseEntity;
-    }
+    }*/
     @PutMapping("properties/{propertyId}")
     public ResponseEntity<PropertyDTO> updateProperty(@RequestBody PropertyDTO propertyDTO,@PathVariable Long propertyId){
         propertyDTO = propertyService.updateProperty(propertyDTO,propertyId);

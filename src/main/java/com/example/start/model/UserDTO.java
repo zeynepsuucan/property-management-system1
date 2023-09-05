@@ -2,11 +2,8 @@ package com.example.start.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Singular;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -16,7 +13,8 @@ import javax.validation.constraints.Size;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserDTO {private Long id;
+public class UserDTO {
+    private Long id;
     private String ownerName;
     @NotNull(message = "Owner Email is mandatory")
     @NotEmpty(message = "Owner Email cannot be empty")
